@@ -153,7 +153,7 @@
 
 > ./corkus before all Example: ./corkus --new-cork
 >
-> The RPM package install will remove the need for the ./corkus command
+> The RPM package install will remove the need for the ./ in the corkus command
 >
 > Keep in mind that the RPM is actively lowercase `corkus` for cli
 >
