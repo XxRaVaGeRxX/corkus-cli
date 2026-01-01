@@ -20,7 +20,7 @@
 > The configs use an xml spinoff for the app called [corkml](#corkml), since cml is common markup language already.
 >
 > It is recommended you generate & fill out
-> the [un.cork](https://github.com/XxRaVaGeRxX/corkus-archive/blob/master/Build-Scripts/Linux/build/un.cork) for smooth
+> the [un.cork](https://github.com/XxRaVaGeRxX/corkus-cli/blob/master/Build-Scripts/Linux/build/un.cork) for smooth
 > workflows
 >
 > FLOSS 7 Days To Die Modlet Structure Generator
@@ -34,7 +34,7 @@
 >
 >This makes it so a new key will be made and encrypted into a .keys file for corkus. corkml will check your inputs and
 > give errors if an input value is incorrect or if the .cork file key does not match your .keys vault. `un.cork` is
-> unusual but a key helps confirm its a Corkus document for both you and Corkus plain-text hash is shown during runtime.
+> unusual, but a key helps confirm its a Corkus document. For both you and Corkus, & plain-text hash is shown during runtime.
 > Straight commandline tools are not out of testing yet.
 >
 > Turn off Auto Generation to "save" your config.
@@ -98,13 +98,18 @@
 > Or try the pre-compiled executable in the build folder
 >
 >Download linux executable in
-> the [build folder](https://github.com/XxRaVaGeRxX/corkus-archive/tree/master/Build-Scripts/Linux/build)
+> the [build folder](https://github.com/XxRaVaGeRxX/corkus-cli/tree/master/Build-Scripts/Linux/build)
 >
 >Give it permission to run with `chmod +x ./Corkus` in appropriate directory
 >
 >Then run the executable with `./Corkus`
 >
 >`OR CLICK THE EXE in the path you want to create!!`
+
+##### Linux RPM is now available
+>Pre-Release
+>
+>More Coming Soon
 
 ## Windows
 
