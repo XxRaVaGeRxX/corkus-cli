@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.5)
-project(Corkus)
+project(corkus)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(Corkus Code/src/main.cpp
+add_executable(corkus Code/src/main.cpp
 		Code/src/config.cpp
 		Code/headers/config.h
 		Code/src/quickmenu.cpp
@@ -22,4 +22,4 @@ add_executable(Corkus Code/src/main.cpp
 		Code/headers/path.h
 )
 
-target_compile_options(Corkus PRIVATE -Wall -Werror)
+target_compile_options(corkus PRIVATE -Wall -Werror)
