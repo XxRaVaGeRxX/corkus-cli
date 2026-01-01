@@ -20,7 +20,7 @@
 > The configs use an xml spinoff for the app called [corkml](#corkml), since cml is common markup language already.
 >
 > It is recommended you generate & fill out
-> the [un.cork](https://github.com/XxRaVaGeRxX/corkus-archive/blob/master/Build-Scripts/Linux/build/un.cork) for smooth
+> the [un.cork](https://github.com/XxRaVaGeRxX/corkus-cli/blob/master/Build-Scripts/Linux/build/un.cork) for smooth
 > workflows
 >
 > FLOSS 7 Days To Die Modlet Structure Generator
@@ -98,13 +98,18 @@
 > Or try the pre-compiled executable in the build folder
 >
 >Download linux executable in
-> the [build folder](https://github.com/XxRaVaGeRxX/corkus-archive/tree/master/Build-Scripts/Linux/build)
+> the [build folder](https://github.com/XxRaVaGeRxX/corkus-cli/tree/master/Build-Scripts/Linux/build)
 >
 >Give it permission to run with `chmod +x ./Corkus` in appropriate directory
 >
 >Then run the executable with `./Corkus`
 >
 >`OR CLICK THE EXE in the path you want to create!!`
+
+##### Linux RPM is now available
+>Pre-Release
+>
+>More Coming Soon
 
 ## Windows
 
