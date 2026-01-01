@@ -59,9 +59,8 @@ CorkMLDocument CorkMLParser::parse(const std::string &filepath) {
 CorkMLDocument CorkMLParser::parseString(const std::string &content) {
     CorkMLDocument doc;
 
-    std::regex declRegex(R"lit(<\?(corkle)\s+version="([^"]+)"\s+encoding="([^"]+)"\s*\?>)lit");
-    std::smatch declMatch;
-    if (std::regex_search(content, declMatch, declRegex)) {
+    const std::regex declRegex(R"lit(<\?(corkml)\s+version="([^"]+)"\s+encoding="([^"]+)"\s*\?>)lit");
+    if (std::smatch declMatch; std::regex_search(content, declMatch, declRegex)) {
         doc.version = declMatch[2];
         doc.encoding = declMatch[3];
     }
@@ -73,13 +72,13 @@ CorkMLDocument CorkMLParser::parseString(const std::string &content) {
 }
 
 std::string CorkMLParser::stripComments(const std::string &content) {
-    std::regex commentRegex("<!--[\\s\\S]*?-->");
+    const std::regex commentRegex("<!--[\\s\\S]*?-->");
     return std::regex_replace(content, commentRegex, "");
 }
 
 std::string CorkMLParser::trim(const std::string &s) {
-    size_t start = s.find_first_not_of(" \t\n\r");
-    size_t end = s.find_last_not_of(" \t\n\r");
+    const size_t start = s.find_first_not_of(" \t\n\r");
+    const size_t end = s.find_last_not_of(" \t\n\r");
     return (start == std::string::npos) ? "" : s.substr(start, end - start + 1);
 }
 
@@ -94,7 +93,7 @@ CorkMLNode CorkMLParser::parseElement(const std::string &content) {
         std::string tagName = match[1];
 
         if (tagName == "STARTFILE" || tagName == "ENDFILE" || tagName == "CORKFILE" ||
-            tagName.find("?") != std::string::npos) {
+            tagName.find('?') != std::string::npos) {
             remaining = match.suffix();
             continue;
         }
@@ -130,7 +129,7 @@ CorkMLNode CorkMLParser::parseElement(const std::string &content) {
 
 std::vector<CorkMLNode> CorkMLParser::parseChildren(const std::string &content) {
     std::vector<CorkMLNode> children;
-    std::regex tagRegex("<(\\w+)([^>]*)>([\\s\\S]*?)</\\1>");
+    const std::regex tagRegex(R"(<(\w+)([^>]*)>([\s\S]*?)</\1>)");
     std::smatch match;
     std::string remaining = content;
 
@@ -147,7 +146,7 @@ std::vector<CorkMLNode> CorkMLParser::parseChildren(const std::string &content) 
             attrSearch = attrMatch.suffix();
         }
 
-        std::string innerContent = match[3];
+        const std::string innerContent = match[3];
         if (innerContent.find('<') != std::string::npos) {
             child.children = parseChildren(innerContent);
         } else {

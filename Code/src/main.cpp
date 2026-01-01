@@ -4,7 +4,6 @@
 #include <fstream>
 #include <thread>
 #include <chrono>
-#include <cstring>
 
 #include "../headers/config.h"
 #include "../headers/quickmenu.h"
@@ -140,13 +139,13 @@ void initMsg() {
     cout << "\n </> Made By: </> RavagerStudio </> ©2026 GPL-3.0 </> \n";
     sleep_for(4s);
 
-    cout << "\n </>  </>  </>  </> \n\n";
-    cout << " </> Welcome to Corkus 1.2.2! </> \n";
-    cout << " </> A CLI app for creating a ModInfo.xml </> \n";
+    cout << "\n </> </> </> </> </> </> </> </> </> </> </> </> </> \n\n";
+    cout << " </> Welcome to Corkus 2.0! </> \n";
+    cout << " </> A CLI app for creating a ModInfo.xml or/& item.xml etc </> \n";
     cout << " </> For more information visit the GitHub page </> \n";
-    cout << " </> https://github.com/XxRaVaGeRxX/Corkus </> \n";
+    cout << " </> https://github.com/XxRaVaGeRxX/corkus-cli </> \n";
     cout << " </> Thank you for using the app! </> \n";
-    cout << " </> ### TURN OFF LONG INTRO IN YOUR un.cork ### </> ";
+    cout << " </> ### TURN OFF LONG INTRO IN YOUR 'un.cork' CONFIG FILE ### </> ";
     cout << "\n\n </> Corkus Is Ready </> \n\n";
 }
 
@@ -183,16 +182,16 @@ VALIDATION:
 
 XML GENERATION:
     --build                     Build ModInfo.xml from current config
-    --skeleton <num>            Generate XML template (1-24, or 0 for all)
-    --skeleton <num> <style>    Generate with style (minimal/standard/comprehensive)
+    --skeleton                  Generate XML templates interactively
+    --skeleton <style>          Generate with style (minimal/standard/comprehensive)
     --list-skeletons            List all available XML skeleton types
 
 EXAMPLES:
     corkus --new-cork                    Create fresh .cork config
     corkus --new-uncork                  Create user config file
     corkus --validate .cork              Check if config is valid
-    corkus --skeleton 1                  Generate items.xml template
-    corkus --skeleton 3 comprehensive   Generate detailed recipes.xml
+    corkus --skeleton                    Open skeleton selection menu
+    corkus --skeleton comprehensive     Open menu with comprehensive style
     corkus --build                       Generate ModInfo.xml
 
 SKELETON NUMBERS:
@@ -210,9 +209,9 @@ SKELETON NUMBERS:
 }
 
 void printVersion() {
-    cout << "Corkus v1.2.2\n";
+    cout << "Corkus v2.0.1\n";
     cout << "7 Days to Die Mod Configuration Tool\n";
-    cout << "Compatible with 7D2D V1.0 (Alpha 2.5+)\n";
+    cout << "Compatible with 7D2D V1.0+\n";
     cout << "Made by RavagerStudio - 2026 GPL-3.0\n";
 }
 
@@ -369,32 +368,22 @@ int handleArgs(int argc, char *argv[]) {
 
         // Generate skeleton
         if (arg == "--skeleton") {
-            if (i + 1 < argc) {
-                int skelNum = std::stoi(argv[++i]);
-                string style = "standard";
+            string style = "standard";
 
-                // Check if style argument provided
-                if (i + 1 < argc && argv[i + 1][0] != '-') {
-                    style = argv[++i];
-                }
-
-                // Get mod name from config or use default
-                string modName = "MyMod";
-                if (std::filesystem::exists("un.cork") || std::filesystem::exists(".cork")) {
-                    Config config = loadConfig();
-                    modName = config.dName.empty() ? "MyMod" : config.dName;
-                }
-
-                if (skelNum == 0) {
-                    createAllXMLSkeletons(modName, style);
-                } else {
-                    selectSkel(modName, style);
-                }
-                return 0;
-            } else {
-                cerr << " </> Error: --skeleton requires a number (0-24) </>\n";
-                return 1;
+            // Check if style argument provided
+            if (i + 1 < argc && argv[i + 1][0] != '-') {
+                style = argv[++i];
             }
+
+            // Get mod name from config or use default
+            string modName = "MyMod";
+            if (std::filesystem::exists("un.cork") || std::filesystem::exists(".cork")) {
+                Config config = loadConfig();
+                modName = config.dName.empty() ? "MyMod" : config.dName;
+            }
+
+            selectSkel(modName, style);
+            return 0;
         }
 
         // Build ModInfo.xml
