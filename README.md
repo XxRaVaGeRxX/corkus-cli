@@ -34,7 +34,7 @@
 >
 >This makes it so a new key will be made and encrypted into a .keys file for corkus. corkml will check your inputs and
 > give errors if an input value is incorrect or if the .cork file key does not match your .keys vault. `un.cork` is
-> unusual but a key helps confirm its a Corkus document for both you and Corkus plain-text hash is shown during runtime.
+> unusual, but a key helps confirm its a Corkus document. For both you and Corkus, & plain-text hash is shown during runtime.
 > Straight commandline tools are not out of testing yet.
 >
 > Turn off Auto Generation to "save" your config.
