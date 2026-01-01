@@ -1,4 +1,4 @@
-# </> Corkus </>
+# </> Corkus-CLI </>
 
 ## Pop the cork on your mods!
 
@@ -91,7 +91,7 @@
 >
 >Then run the program still in the repo directory and it should run in the terminal
 >
->     ./build/Corkus
+>     ./build/corkus
 
 ##### Pre-Compiled Executable
 
@@ -100,7 +100,7 @@
 >Download linux executable in
 > the [build folder](https://github.com/XxRaVaGeRxX/corkus-cli/tree/master/Build-Scripts/Linux/build)
 >
->Give it permission to run with `chmod +x ./Corkus` in appropriate directory
+>Give it permission to run with `chmod +x ./corkus` in appropriate directory
 >
 >Then run the executable with `./Corkus`
 >
@@ -131,7 +131,7 @@
 >
 > `cd /build`
 >
-> `Corkus.exe`
+> `corkus.exe`
 
 ## Corkml
 
@@ -151,9 +151,9 @@
 
 ## CommandLine (**WARNING: IN TEST PHASE**)
 
-> ./Corkus before all Example: ./Corkus --new-cork
+> ./corkus before all Example: ./corkus --new-cork
 >
-> The RPM package install will remove the need for the ./Corkus command
+> The RPM package install will remove the need for the ./ in the corkus command
 >
 > Keep in mind that the RPM is actively lowercase `corkus` for cli
 >
