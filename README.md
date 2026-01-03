@@ -108,8 +108,15 @@
 
 ##### Linux RPM is now available
 >Pre-Release
+> 
+> Grab the RPM from the [releases](https://github.com/XxRaVaGeRxX/corkus-cli/releases) page
+> 
+> Then; `sudo dnf install /path/to/filename.rpm`
+> 
+> Then run the executable in CLI with `corkus <command>`
 >
->More Coming Soon
+>
+>More RPM updates Coming Soon
 
 ## Windows
 
